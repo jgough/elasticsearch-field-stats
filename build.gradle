@@ -22,7 +22,7 @@ apply plugin: 'idea'
 apply plugin: 'elasticsearch.esplugin'
 
 apply plugin: 'signing'
-apply plugin: 'maven-publish'
+apply plugin: 'nebula.maven-base-publish'
 
 apply from: 'gradle/ext.gradle'
 apply from: 'gradle/publish.gradle'
@@ -45,10 +45,6 @@ artifacts {
     archives javadocJar, sourcesJar
 }
 
-
-signing {
-    sign configurations.archives
-}
 
 checkstyleTest.enabled = false
 dependencyLicenses.enabled = false
